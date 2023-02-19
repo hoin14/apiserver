@@ -1,6 +1,6 @@
 package com.code.api.dto;
 
-public class User {
+public class UserDto {
 	private String id;
 	private String name;
 

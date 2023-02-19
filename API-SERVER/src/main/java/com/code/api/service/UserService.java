@@ -1,10 +1,15 @@
 package com.code.api.service;
 
-import java.util.List;
+import org.springframework.stereotype.Service;
 
-import com.code.api.dto.User;
+import com.code.api.vo.UserVo;
 
+@Service
 public interface UserService {
-	public List<User> getUserList();
+
+	//public List<UserDto> getUserList();
+	public UserVo getUserInfo(String userName);
+	public void insertUserInfo(UserVo userVo);
+	
 	
 }

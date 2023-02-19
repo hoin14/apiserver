@@ -1,0 +1,11 @@
+create table api_user (
+	user_no int(11) not null auto_increment primary key,
+    user_id varchar(256) not null,
+    user_pw varchar(256),
+    user_name varchar(256) not null,
+    user_auth varchar(256) not null,
+	is_delete int(1) default null,
+    is_enable int(1) default null,
+	update_date datetime default null,
+    insert_date datetime default null
+)

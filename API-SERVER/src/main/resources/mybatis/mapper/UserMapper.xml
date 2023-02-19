@@ -2,7 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.code.api.dao.UserDao">
-  <select id="getUserList" resultType="com.code.api.dto.User">
-    SELECT * FROM api_user;
-  </select>
+
+   <!-- 로그인 -->
+   <select id="getUserInfo" resultType="com.code.api.vo.UserVo">
+       SELECT * FROM api_user
+       WHERE USER_NAME= #{userName}
+   </select>
+
+   <!-- 회원가입 -->
+   <insert id="insertUserInfo" parameterType="com.code.api.vo.UserVo">
+       INSERT INTO api_user
+       (USER_ID, USER_PW, USER_NAME, USER_AUTH, IS_DELETE, IS_ENABLE, UPDATE_DATE, INSERT_DATE)
+       VALUES(#{userId},#{userPw},#{userName},#{userAuth}, 0, 1, sysdate(), sysdate());
+   </insert>
+    
+
 </mapper>

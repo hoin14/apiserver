@@ -1,14 +1,15 @@
 package com.code.api.dao;
 
-import java.util.List;
-
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
-import com.code.api.dto.User;
+import com.code.api.vo.UserVo;
 
 @Mapper
 @Repository
 public interface UserDao {
-	List<User> getUserList();
+	
+	//List<UserDto> getUserList();
+	public UserVo getUserInfo(String userName);
+	public void insertUserInfo(UserVo userVo);
 }
